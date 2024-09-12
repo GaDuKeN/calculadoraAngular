@@ -1,101 +1,86 @@
-/* Estilos da Calculadora Container */
-.calculator-container {
-  position: fixed; /* Para que fique fixa ao rolar a página */
-  top: 10px;       /* Distância de 10px do topo */
-  left: 10px;      /* Distância de 10px da esquerda */
-  width: 350px;    /* Ajuste a largura conforme necessário */
+.container-calculadora {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 350px;
 }
 
+.calculadora {
+  width: 350px;
+  border-radius: 0px;
+  overflow: hidden;
+  background-color: #0a0e0f;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 
-  
-  
-  /* Estilos da Calculadora */
-  .calculator {
-    width: 350px; /* Ajuste a largura conforme necessário */
+  .titulo {
+    background-color: #020203;
+    color: #f50808;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    border-bottom: 2px solid #0a0a0f;
+  }
+
+  .display {
+    font-size: 2em;
+    color: #f30909;
+    background-color: #4a586e;
+    margin: 10px;
+    text-align: right;
+    border: none;
+    padding: 15px;
     border-radius: 0px;
-    overflow: hidden;
-    background-color: #0a0e0f;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    
-    .title {
-      background-color: #020203;
-      color: #f50808;
-      padding: 15px;
-      text-align: center;
-      font-size: 1.8em; /* Aumenta o tamanho da fonte do título */
-      font-weight: bold;
-      border-bottom: 2px solid #0a0a0f;
-    }
-  
-    .display {
-      font-size: 2em; /* Aumenta o tamanho da fonte do display */
-      color: #f30909;
-      background-color: #4a586e;
-      margin: 10px;
-      text-align: right;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 10px;
+
+    button {
+      font-size: 1.4em;
+      padding: 25px;
       border: none;
-      padding: 15px;
       border-radius: 0px;
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
-    }
-  
-    .buttons {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px; /* Aumenta o espaço entre os botões */
-      margin: 10px;
-  
-      button {
-        font-size: 1.4em; /* Aumenta o tamanho da fonte dos botões */
-        padding: 25px; /* Aumenta o tamanho dos botões */
-        border: none;
-        border-radius: 0px;
-        background-color: #4a586e;
-        color: #fa0808;
-        cursor: pointer;
-        transition: background-color 0.3s, transform 0.2s;
-  
+      background-color: #4a586e;
+      color: #fa0808;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+
+      &:hover {
+        background-color: #61748d;
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+
+      &.operador {
+        background-color: #ff7e5f;
+
         &:hover {
-          background-color: #61748d;
+          background-color: #ff6f61;
         }
-  
-        &:active {
-          transform: scale(0.95);
+      }
+
+      &.igual {
+        background-color: #4caf50;
+
+        &:hover {
+          background-color: #45a049;
         }
-  
-        &.operator {
-          background-color: #ff7e5f;
-          &:hover {
-            background-color: #ff6f61;
-          }
-        }
-  
-        &.equal {
-          background-color: #4caf50;
-          &:hover {
-            background-color: #45a049;
-          }
-        }
-  
-        &.clear {
-          background-color: #f44336;
-          &:hover {
-            background-color: #e53935;
-          }
-        }
-  
-        &.with-image {
-          background-color: transparent;
-          padding: 0;
-          
-          img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            object-fit: cover;
-          }
+      }
+
+      &.limpar {
+        background-color: #f44336;
+
+        &:hover {
+          background-color: #e53935;
         }
       }
     }
   }
-  
+}

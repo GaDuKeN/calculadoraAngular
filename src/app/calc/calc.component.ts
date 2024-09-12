@@ -2,58 +2,58 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-calc',
-  templateUrl: './calc.component.html',  // Atualize o caminho para o template
-  styleUrls: ['./calc.component.scss']    // Atualize o caminho para o SCSS
+  templateUrl: './calc.component.html',
+  styleUrls: ['./calc.component.scss']
 })
 export class CalcComponent {
   public display: string = '';
-  private operand1: number | null = null;
-  private operand2: number | null = null;
-  private operator: string | null = null;
+  private operador1: number | null = null;
+  private operador2: number | null = null;
+  private operador: string | null = null;
 
-  public appendNumber(number: string) {
-    this.display += number;
+  public adicionarNumero(numero: string) {
+    this.display += numero;
   }
 
-  public setOperator(operator: string) {
+  public definirOperador(operador: string) {
     if (this.display !== '') {
-      this.operand1 = parseFloat(this.display);
-      this.operator = operator;
+      this.operador1 = parseFloat(this.display);
+      this.operador = operador;
       this.display = '';
     }
   }
 
-  public calculate() {
-    if (this.operand1 !== null && this.operator !== null && this.display !== '') {
-      this.operand2 = parseFloat(this.display);
-      switch (this.operator) {
+  public calcular() {
+    if (this.operador1 !== null && this.operador !== null && this.display !== '') {
+      this.operador2 = parseFloat(this.display);
+      switch (this.operador) {
         case '+':
-          this.display = (this.operand1 + this.operand2).toString();
+          this.display = (this.operador1 + this.operador2).toString();
           break;
         case '-':
-          this.display = (this.operand1 - this.operand2).toString();
+          this.display = (this.operador1 - this.operador2).toString();
           break;
         case '*':
-          this.display = (this.operand1 * this.operand2).toString();
+          this.display = (this.operador1 * this.operador2).toString();
           break;
         case '/':
-          if (this.operand2 !== 0) {
-            this.display = (this.operand1 / this.operand2).toString();
+          if (this.operador2 !== 0) {
+            this.display = (this.operador1 / this.operador2).toString();
           } else {
-            this.display = 'Error';
+            this.display = 'Erro';
           }
           break;
       }
-      this.operand1 = null;
-      this.operand2 = null;
-      this.operator = null;
+      this.operador1 = null;
+      this.operador2 = null;
+      this.operador = null;
     }
   }
 
-  public clear() {
+  public limpar() {
     this.display = '';
-    this.operand1 = null;
-    this.operand2 = null;
-    this.operator = null;
+    this.operador1 = null;
+    this.operador2 = null;
+    this.operador = null;
   }
 }
